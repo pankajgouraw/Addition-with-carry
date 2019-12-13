@@ -126,7 +126,7 @@ font-weight: bold;
 .carryContainer{
 align-items: center;
 display: flex;
-/*max-width: 542px;*/
+/*max-width: 542px;*/  
 justify-content: left;
 margin: auto;
 /*margin-left: 62px;*/
