@@ -11,22 +11,22 @@ body {
 #clearCarry{
     display: none;
 }
-.wrapper{min-height: 100vh;max-width:960px;margin:0px auto;position: relative;}
+.wrapper{min-height: 100vh;max-width:800px;margin:0px auto;position: relative;}
 
 #header .logo h3 {
 flex-grow: 1;
 text-align: right;
 font-family: sans-serif;
 font-size: 28px;
-color: #fff;
+color: #000;
 margin-top:0px;
 text-align: center;
-padding-right: 200px;
+/*padding-right: 200px;*/
 }
 
 
 
-.oops h1, .wellDone h1{text-shadow: 2px 2px 2px #000;}
+.oops h1, .wellDone h1{}
 .oops{
     position: fixed;
     left: 0px;
@@ -34,7 +34,7 @@ padding-right: 200px;
  /*   background:
     #000000d6;*/
     color:
-    #fff;
+    #000;
     height: 0px;
     overflow: hidden;
     width: 0px;
@@ -57,7 +57,7 @@ margin-bottom: 30px;
 /*    background:
     #000000d6;*/
     color:
-    #fff;
+    #000;
     height: 0px;
     overflow: hidden;
     width: 0px;
@@ -92,28 +92,51 @@ cursor:pointer;
 }
 
 .carryContainer .carriedValue{
-    border: 1px solid #fff;
+    border: 1px solid #000;
     height: 30px;
     width:30px;
     position: relative; 
+    font-weight: bold;
+}
+
+
+.placeValueContainer{
+display: flex;
+justify-content: flex-end;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+.placeValueContainer .placeValue{
+border: 1px solid
+transparent;
+width: 50px;
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 15px !important;
+text-transform: uppercase;
+font-weight: bold;
 }
 
 #secNo{}
 
-.carryContainer p{color:#fff;}
+.carryContainer p{color:#000;}
 
 .carryContainer{
-display: flex;
-max-width: 542px;
-justify-content: center;
-margin: auto;
-margin-left: 62px; 
-padding-bottom: 10px;
 align-items: center;
+display: flex;
+/*max-width: 542px;*/
+justify-content: left;
+margin: auto;
+/*margin-left: 62px;*/
+padding-bottom: 10px;
+align-items: left;
+
 }
 
-#header .logo {margin: 0px auto;display: flex;align-items: center;}
-#header {padding: 15px;}
+#header .logo {margin: 0px auto;display: flex;align-items: center;justify-content: flex-end;}
+#header {padding: 15px; }
 #innerWrapper{  max-width: 960px;  margin: 15px;}
 #firstNo > span > span {
 display: inline-block;
@@ -133,7 +156,7 @@ top: -46px;
 
 #innerWrapper h2{font-family: sans-serif;font-weight: bold;position: relative;left: -70px;}
 .questionNo{color: #fff;text-align: center;font-size: 30px;font-weight: 600;}
-.nav{max-width: 500px;margin: auto;margin-top: 20px;}
+.nav{max-width: 500px;margin-top: 20px;}
 .nav img:nth-child(1){float:left;}
 .nav img:nth-child(2){float:right;}
 .nav img{width: 120px;cursor:pointer;z-index:999;position: relative;}
@@ -159,33 +182,24 @@ top: -46px;
 .Example .expAns{border-top: 1px solid #fff;margin-top: 5px;padding-top: 5px;}
 .Example p{font-size: 20px;color: #fff;}
 .border{border:1px solid #FFF; padding: 10px; box-shadow: 0px 0px 5px #000;}
-.operations{display: flex;justify-content: space-around;}
+.operations{display: flex;justify-content: space-between;}
 .questionContainer .question{
-padding-top: 54px;
+padding-top: 0px;
     display: flex;flex-direction: column;align-items: center; margin-bottom: 30px;}
 /*#secNo, #firstNo{letter-spacing: 20px;}*/
 #secNo > span{ width: 50px; display: inline-block; text-align: center; border:1px solid transparent;}
 #firstNo > span {position: relative; width: 50px; display: inline-block; text-align: center; border:1px solid transparent;}
 #firstNo > span > span.carryDropContainer{
-display: inline-block;
-
-position: absolute;
-
-top: -16px;
-
-font-size: 19px;
-
-
-width: inherit;
-
+font-size: 18px;
 text-align: center;
+font-weight: bold;
 }
 .questionContainer .question p{font-size: 50px;}
 .questionContainer .options{}
-.options{ margin-top: 10px;padding-top: 10px;padding-bottom: 10px;display: flex;}
+.options{ margin-top: 10px;padding-top: 10px;padding-bottom: 10px;display: flex; justify-content: center;}
 .options p span{display: block;width: inherit;height: inherit;}
 .options p{
-border: 1px solid #fff;
+border: 1px solid #000;
 width: 50px;
 height: 50px;
 font-size: 50px;
@@ -197,9 +211,9 @@ cursor:pointer;
 overflow: hidden;
 }
 
-.ansContainer{border-top: 2px solid #fff;margin-top: 10px;padding-top: 10px;display: flex;justify-content: end;}
+.ansContainer{border-top: 2px solid #000;margin-top: 10px;padding-top: 10px;display: flex;justify-content: end;}
 .ansContainer p{
-border: 1px solid #fff;
+border: 1px solid #000;
 width: 50px;
 height: 50px;
 display: flex;
@@ -221,15 +235,29 @@ box-shadow: 0px 0px 5px #000;
 
 #next, #reload{ display: none; }
 
-.nav button{ padding: 5px 10px; font-weight: 600; cursor:pointer; letter-spacing: 1px;}
+.nav button{
+    width:100%; padding: 5px 10px; font-weight: 600; cursor:pointer; letter-spacing: 1px;margin-bottom: 10px;
+}
 
+.resulNav{
+    display: flex;
+flex-direction: column;width:138px;
+}
+
+.resultContainer{width:115px; height: min-content;}
+
+
+/*media query code*/
 @media screen and (max-width: 768px) {
+
+    .placeValueContainer .placeValue{width:30px; height: 30px;}
 .options p{font-size: 25px;width: 30px;height: 30px;}
 .questionContainer .question p{font-size: 25px;}
 .ansContainer p{font-size: 25px;width: 30px;height: 30px;}
 .resultContainer{width:80px;}
+.resulNav{width:103px;}
 .resultContainer .output{height: 40px;}
-.carryContainer{ justify-content: center;
+.carryContainer{ justify-content: flex-start;
 flex-wrap: wrap;
 margin-left: 0px;}
 #secNo > span{ width: 30px; }
@@ -257,8 +285,25 @@ margin-left: 0px;}
 .carryContainer{
     justify-content: flex-start;
 }
-.resultContainer{width:80px; margin-left:10px;}
+
 .options{ flex-wrap: wrap;}
 .ansContainer{ flex-wrap: wrap;}
+.operations{
+        flex-direction: column;
+}
+
+.resulNav {
+    width: auto;
+    flex-direction: column-reverse;
+}
+.resultContainer{
+  width: auto;
+margin-left: 0px;
+margin-top: 15px;
+display: block;
+}
+.resultContainer .output {
+    width: 10%;
+}
 } 
 /*  // media quesry end here...*/

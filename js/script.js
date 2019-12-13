@@ -10,6 +10,7 @@ $(function() {
     dragDrop();
     $('#firstNo, #secNo, .sign').css({color:questColor});
     $('.options p span').css({color:numColor});
+    $('.sign').css({color:signColor});
 
     // function for drag and drop
   function dragDrop(){
@@ -114,6 +115,7 @@ $(function() {
 
 
   $('#next').click(function(){
+    $('.placeValueContainer').empty();
     chance =0;
      $(this).hide();
      $('#check').fadeIn();
@@ -124,6 +126,7 @@ $(function() {
      // $('#firstNo > span > span').hide();
       dragCarry()
       generatePlaceValue()
+      $('#clearCarry').hide();
 
   });
 
@@ -184,6 +187,8 @@ $(function() {
   
 
   function oopsTryAgain(){
+      let audio1 = new Audio('audio/tryAgain.mp3');
+      audio1.play(); 
       $('.oops').removeClass('zoomOut');
       $('.oops').addClass('animated zoomIn oopsHW');
 
@@ -198,6 +203,8 @@ $(function() {
   }
 
 function wellDone(){
+      let audio1 = new Audio('audio/welldone.mp3');
+      audio1.play(); 
       $('.wellDone').removeClass('zoomOut');
       $('.wellDone').addClass('animated zoomIn oopsHW');
       setTimeout(function(){
@@ -236,16 +243,20 @@ $('#clearCarry').click(function(){
 });
 // end clear carry function
 
-  // function to generate the place value
+// function to generate the place value
   function generatePlaceValue(){
-    let Arr = (Array.from($('#firstNo > span')).reverse());
-    for(let i= 0; i <Arr.length; i++){
-       if(i==0){$(Arr[i]).append(`<span class='placeValue'>o</span>`);} 
-       if(i==1){$(Arr[i]).append(`<span class='placeValue'>t</span>`);} 
-       if(i==2){$(Arr[i]).append(`<span class='placeValue'>h</span>`);} 
-       if(i==3){$(Arr[i]).append(`<span class='placeValue'>th</span>`);} 
-       if(i==4){$(Arr[i]).append(`<span class='placeValue'>t.th</span>`);} 
-       if(i==5){$ (Arr[i]).append(`<span class='placeValue'>l</span>`);} 
+    let Arr = $('.ansContainer > .drop');
+    console.log(Arr);
+    for(let i= 0; i < Arr.length; i++){
+       if(i==0){$('.placeValueContainer').prepend(`<p class="placeValue">o</p>`);} 
+       if(i==1){$('.placeValueContainer').prepend(`<p class='placeValue'>t</p>`);} 
+       if(i==2){$('.placeValueContainer').prepend(`<p class='placeValue'>h</p>`);} 
+       if(i==3){$('.placeValueContainer').prepend(`<p class='placeValue'>th</p>`);} 
+       if(i==4){$('.placeValueContainer').prepend(`<p class='placeValue'>t.th</p>`);} 
+       if(i==5){$ ('.placeValueContainer').prepend(`<p class='placeValue'>l</p>`);} 
+       if(i==6){$ ('.placeValueContainer').prepend(`<p class='placeValue'>tl</p>`);} 
+       if(i==7){$ ('.placeValueContainer').prepend(`<p class='placeValue'>c</p>`);} 
+       if(i==8){$ ('.placeValueContainer').prepend(`<p class='placeValue'>tc</p>`);} 
     }
   }
   generatePlaceValue()
@@ -267,6 +278,8 @@ function showError(){
   })
 }
 
-
+$('#reset').click(function(){
+  $('.drop').empty().attr('data-user', '').css({'borderColor':'#000'});
+});
 
 });   // end document function 
