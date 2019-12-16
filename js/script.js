@@ -258,7 +258,7 @@ $('#clearCarry').click(function(){
        if(i==7){$ ('.placeValueContainer').prepend(`<p class='placeValue'>c</p>`);} 
        if(i==8){$ ('.placeValueContainer').prepend(`<p class='placeValue'>tc</p>`);} 
     }
-  }
+  } 
   generatePlaceValue()
   // function to generate the place value end
 
